@@ -23,7 +23,6 @@
             "outputPath": "dist/mailer",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -68,25 +67,24 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mailer:build"
+            "buildTarget": "mailer:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mailer:build:production"
+              "buildTarget": "mailer:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mailer:build"
+            "buildTarget": "mailer:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
@@ -127,7 +125,6 @@
       }
     }
   },
-  "defaultProject": "mailer",
   "cli": {
     "analytics": false
   }
